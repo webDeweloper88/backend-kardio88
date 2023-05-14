@@ -10,6 +10,8 @@ import { AuthModule } from '../auth/auth.module';
 import { TokenModule } from '../token/token.module';
 import { WatchlistModule } from '../watchlist/watchlist.module';
 import { Watchlist } from '../watchlist/models/watchlist.model';
+import { Bemors } from '../bemor/models/bemor.model';
+import { BemorModule } from '../bemor/bemor.module';
 
 
 
@@ -31,7 +33,7 @@ import { Watchlist } from '../watchlist/models/watchlist.model';
       database: configService.get('db_name'),
       synchronize: true,
       autoLoadModels: true,
-      models: [User, Watchlist]
+      models: [User, Watchlist, Bemors]
 
     })
 
@@ -39,7 +41,8 @@ import { Watchlist } from '../watchlist/models/watchlist.model';
     UserModule,
     AuthModule,
     TokenModule,
-    WatchlistModule
+    WatchlistModule,
+    BemorModule
   ],
   controllers: [AppController],
   providers: [AppService],
