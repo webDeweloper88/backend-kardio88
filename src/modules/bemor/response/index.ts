@@ -1,9 +1,8 @@
 import { IsNumber, IsString } from "class-validator";
 import { ApiProperty } from "@nestjs/swagger";
+import { Bemors } from "../models/bemor.model";
 
 export class BemorResponse {
-
-
 
     @ApiProperty()
     @IsString()
@@ -56,6 +55,26 @@ export class BemorResponse {
     @ApiProperty()
     @IsString()
     qanday_transportda: string;
+
+    static fromModel(model: Bemors): BemorResponse {
+        const bemorResponse = new BemorResponse();
+
+        bemorResponse.fio = model.fio,
+
+            bemorResponse.jinsi = model.jinsi,
+            bemorResponse.tugilgan_sana = model.tugilgan_sana,
+            bemorResponse.buyi = model.buyi,
+            bemorResponse.vazni = model.vazni,
+            bemorResponse.tana_xarorati = model.tana_xarorati,
+            bemorResponse.manzili = model.manzili,
+            bemorResponse.ish_joyi = model.ish_joyi,
+            bemorResponse.qayerdan_yuborilgan = model.qayerdan_yuborilgan,
+            bemorResponse.yuborilgan_tashxis = model.yuborilgan_tashxis,
+            bemorResponse.qabulxona_tashxisi = model.qabulxona_tashxisi,
+            bemorResponse.shoshilinch_keltirilgan = model.shoshilinch_keltirilgan,
+            bemorResponse.qanday_transportda = model.qanday_transportda
+        return bemorResponse;
+    }
 }
 
 

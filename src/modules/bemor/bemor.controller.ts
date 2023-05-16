@@ -19,6 +19,8 @@ export class BemorController {
         return this.bemorService.createBemor(dto);
     }
 
+    @ApiTags('API')
+    @ApiResponse({ status: 201, type: BemorResponse })
     @Get('public_bemor')
     async publicBemor(): Promise<BemorResponse[]> {
         return this.bemorService.publicBemor();
