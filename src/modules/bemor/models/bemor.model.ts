@@ -1,10 +1,11 @@
-import { Model, Table, Column } from "sequelize-typescript";
+import { Model, Table, Column, PrimaryKey } from "sequelize-typescript";
 
 @Table
 export class Bemors extends Model<Bemors> {
 
-    //@Column({ type: 'int' })
-    //bemor_id: number;
+    //@PrimaryKey
+    //@Column
+    //id!: number;
 
     @Column
     fio: string;

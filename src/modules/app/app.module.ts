@@ -12,6 +12,11 @@ import { WatchlistModule } from '../watchlist/watchlist.module';
 import { Watchlist } from '../watchlist/models/watchlist.model';
 import { Bemors } from '../bemor/models/bemor.model';
 import { BemorModule } from '../bemor/bemor.module';
+import { Doctor } from '../doctor/models';
+import { DoctorModule } from '../doctor/doctor.module';
+import { Department } from '../department/models';
+import { DepartmentModule } from '../department/department.module';
+
 
 
 
@@ -33,7 +38,7 @@ import { BemorModule } from '../bemor/bemor.module';
       database: configService.get('db_name'),
       synchronize: true,
       autoLoadModels: true,
-      models: [User, Watchlist, Bemors]
+      models: [User, Watchlist, Bemors, Doctor, Department,]
 
     })
 
@@ -42,7 +47,10 @@ import { BemorModule } from '../bemor/bemor.module';
     AuthModule,
     TokenModule,
     WatchlistModule,
-    BemorModule
+    BemorModule,
+    DoctorModule,
+    DepartmentModule,
+
   ],
   controllers: [AppController],
   providers: [AppService],
