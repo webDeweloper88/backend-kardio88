@@ -40,6 +40,7 @@ export class CreateDepartmentDto {
 
 export class UpdateDepartmentDto {
 
+
     @ApiProperty()
     @IsOptional()
     @IsString()

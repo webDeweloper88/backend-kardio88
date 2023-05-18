@@ -1,13 +1,15 @@
-import { CreateBemorDto } from './dto/index';
+import { CreateBemorDto, UpdateBemorDto } from './dto/index';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Bemors } from './models/bemor.model';
 import { BemorResponse } from './response';
 
 
+
 @Injectable()
 export class BemorService {
     constructor(@InjectModel(Bemors) private readonly pasientRepository: typeof Bemors) { }
+
 
     async createBemor(dto: CreateBemorDto): Promise<CreateBemorDto> {
         const newBemor = new Bemors();
@@ -25,7 +27,6 @@ export class BemorService {
         newBemor.qabulxona_tashxisi = dto.qabulxona_tashxisi;
         newBemor.shoshilinch_keltirilgan = dto.shoshilinch_keltirilgan;
         newBemor.qanday_transportda = dto.qanday_transportda;
-
         return await newBemor.save();
     }
 
@@ -33,28 +34,26 @@ export class BemorService {
         return this.pasientRepository.findAll();
     }
 
-    async updateBemor(id: number, dto: CreateBemorDto): Promise<BemorResponse> {
+    async findOne(id: number): Promise<Bemors> {
         const bemor = await this.pasientRepository.findByPk(id);
-
         if (!bemor) {
-            throw new NotFoundException(`Bemor with id ${id} not found`);
+            throw new NotFoundException(`Doctor with id ${id} not found`);
         }
-        bemor.fio = dto.fio;
-        bemor.jinsi = dto.jinsi;
-        bemor.tugilgan_sana = dto.tugilgan_sana;
-        bemor.boyi = dto.boyi;
-        bemor.vazni = dto.vazni;
-        bemor.tana_xarorati = dto.tana_xarorati;
-        bemor.manzili = dto.manzili;
-        bemor.ish_joyi = dto.ish_joyi;
-        bemor.qayerdan_yuborilgan = dto.qayerdan_yuborilgan;
-        bemor.yuborilgan_tashxis = dto.yuborilgan_tashxis;
-        bemor.qabulxona_tashxisi = dto.qabulxona_tashxisi;
-        bemor.shoshilinch_keltirilgan = dto.shoshilinch_keltirilgan;
-        bemor.qanday_transportda = dto.qanday_transportda;
-
-        await bemor.save();
         return bemor;
     }
+
+    async update(
+        id: number,
+        updateDoctorDto: UpdateBemorDto,
+    ): Promise<Bemors> {
+        const bemor = await this.pasientRepository.findByPk(id);
+        if (!bemor) {
+            throw new NotFoundException(`Doctor with id ${id} not found`);
+        }
+        await bemor.update(updateDoctorDto);
+        return bemor;
+    }
+
+
 }
 

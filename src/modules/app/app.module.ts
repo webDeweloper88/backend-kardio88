@@ -18,6 +18,8 @@ import { Department } from '../department/models';
 import { DepartmentModule } from '../department/department.module';
 import { Labaratory } from '../labaratory/model/labaratory.model';
 import { LabaratoryModule } from '../labaratory/labaratory.module';
+import { Glyukoza } from '../glyukoza/models/model.glyukoza';
+import { GlyukozaModule } from '../glyukoza/glyukoza.module';
 
 
 
@@ -40,7 +42,7 @@ import { LabaratoryModule } from '../labaratory/labaratory.module';
       database: configService.get('db_name'),
       synchronize: true,
       autoLoadModels: true,
-      models: [User, Watchlist, Bemors, Doctor, Department, Labaratory]
+      models: [User, Watchlist, Bemors, Doctor, Department, Labaratory, Glyukoza]
 
     })
 
@@ -52,7 +54,8 @@ import { LabaratoryModule } from '../labaratory/labaratory.module';
     BemorModule,
     DoctorModule,
     DepartmentModule,
-    LabaratoryModule
+    LabaratoryModule,
+    GlyukozaModule,
 
   ],
   controllers: [AppController],
