@@ -2,7 +2,6 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { DepartmentService, } from './department.service';
 import { CreateDepartmentDto } from './dto';
 import { Department } from './models';
-import { DepartmentResponse } from './response';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
 @Controller('departments')

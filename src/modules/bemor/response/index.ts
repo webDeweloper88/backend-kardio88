@@ -18,7 +18,7 @@ export class BemorResponse {
 
     @ApiProperty()
     @IsString()
-    buyi: string;
+    boyi: string;
 
     @ApiProperty()
     @IsString()
@@ -63,7 +63,7 @@ export class BemorResponse {
 
             bemorResponse.jinsi = model.jinsi,
             bemorResponse.tugilgan_sana = model.tugilgan_sana,
-            bemorResponse.buyi = model.buyi,
+            bemorResponse.boyi = model.boyi,
             bemorResponse.vazni = model.vazni,
             bemorResponse.tana_xarorati = model.tana_xarorati,
             bemorResponse.manzili = model.manzili,

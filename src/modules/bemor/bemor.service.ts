@@ -15,7 +15,7 @@ export class BemorService {
         newBemor.fio = dto.fio;
         newBemor.jinsi = dto.jinsi;
         newBemor.tugilgan_sana = dto.tugilgan_sana;
-        newBemor.buyi = dto.buyi;
+        newBemor.boyi = dto.boyi;
         newBemor.vazni = dto.vazni;
         newBemor.tana_xarorati = dto.tana_xarorati;
         newBemor.manzili = dto.manzili;
@@ -42,7 +42,7 @@ export class BemorService {
         bemor.fio = dto.fio;
         bemor.jinsi = dto.jinsi;
         bemor.tugilgan_sana = dto.tugilgan_sana;
-        bemor.buyi = dto.buyi;
+        bemor.boyi = dto.boyi;
         bemor.vazni = dto.vazni;
         bemor.tana_xarorati = dto.tana_xarorati;
         bemor.manzili = dto.manzili;

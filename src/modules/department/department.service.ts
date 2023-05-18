@@ -2,7 +2,6 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Department } from './models';
 import { CreateDepartmentDto } from './dto';
-import { Doctor } from '../doctor/models';
 
 @Injectable()
 export class DepartmentService {
@@ -10,22 +9,12 @@ export class DepartmentService {
 
     async create(dto: CreateDepartmentDto): Promise<CreateDepartmentDto> {
         const newDepartment = new Department();
-        newDepartment.bulimNomi = dto.bulimNomi;
+        newDepartment.bolim_nomi = dto.bolim_nomi;
         newDepartment.hudud = dto.hudud;
         newDepartment.muassasa = dto.muassasa;
-        newDepartment.telefon = dto.telefon;
-        newDepartment.bulimBoshligi = dto.bulimBoshligi;
-
-        const doctors = dto.doctors.map(doctorDto => {
-            const doctor = new Doctor();
-            doctor.fio = doctorDto.fio;
-            doctor.mutaxassislik = doctorDto.mutaxassislik
-            return doctor;
-        });
-
-        newDepartment.doctors = doctors;
-
-
+        newDepartment.telefon_raqam = dto.telefon_raqam;
+        newDepartment.bolim_boshligi = dto.bolim_boshligi;
+        newDepartment.shifokorlar_soni = dto.shifokorlar_soni;
         return newDepartment.save();
     }
 

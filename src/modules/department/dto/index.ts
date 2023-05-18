@@ -1,13 +1,13 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { Type } from 'class-transformer';
-import { IsNotEmpty, IsString, IsOptional, ValidateNested } from 'class-validator';
-import { CreateDoctorDto } from 'src/modules/doctor/dto';
+
+import { IsNotEmpty, IsString, IsOptional, IsNumber } from 'class-validator';
+
 
 export class CreateDepartmentDto {
     @ApiProperty()
     @IsNotEmpty()
     @IsString()
-    bulimNomi: string;
+    bolim_nomi: string;
 
     @ApiProperty()
     @IsNotEmpty()
@@ -22,17 +22,18 @@ export class CreateDepartmentDto {
     @ApiProperty()
     @IsOptional()
     @IsString()
-    telefon: string;
+    telefon_raqam: string;
 
     @ApiProperty()
     @IsOptional()
     @IsString()
-    bulimBoshligi: string;
+    bolim_boshligi: string;
 
-    @ApiProperty({ type: [CreateDoctorDto] })
-    @ValidateNested({ each: true })
-    @Type(() => CreateDoctorDto)
-    doctors: CreateDoctorDto[];
+    @ApiProperty()
+    @IsOptional()
+    @IsNumber()
+    shifokorlar_soni: number;
+
 }
 
 

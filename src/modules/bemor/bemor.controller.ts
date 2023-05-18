@@ -1,6 +1,5 @@
 
 import { Controller, Post, Body, Get, Catch, ArgumentsHost } from '@nestjs/common';
-import { Bemors } from './models/bemor.model';
 import { CreateBemorDto } from './dto/index';
 import { BemorService } from './bemor.service';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';

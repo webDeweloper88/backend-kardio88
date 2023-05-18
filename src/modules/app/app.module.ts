@@ -16,6 +16,8 @@ import { Doctor } from '../doctor/models';
 import { DoctorModule } from '../doctor/doctor.module';
 import { Department } from '../department/models';
 import { DepartmentModule } from '../department/department.module';
+import { Labaratory } from '../labaratory/model/labaratory.model';
+import { LabaratoryModule } from '../labaratory/labaratory.module';
 
 
 
@@ -38,7 +40,7 @@ import { DepartmentModule } from '../department/department.module';
       database: configService.get('db_name'),
       synchronize: true,
       autoLoadModels: true,
-      models: [User, Watchlist, Bemors, Doctor, Department,]
+      models: [User, Watchlist, Bemors, Doctor, Department, Labaratory]
 
     })
 
@@ -50,6 +52,7 @@ import { DepartmentModule } from '../department/department.module';
     BemorModule,
     DoctorModule,
     DepartmentModule,
+    LabaratoryModule
 
   ],
   controllers: [AppController],

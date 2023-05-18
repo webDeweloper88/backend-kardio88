@@ -9,7 +9,7 @@ export class DepartmentResponse {
 
     @ApiProperty()
     @IsString()
-    bulimNomi: string;
+    bolim_nomi: string;
 
     @ApiProperty()
     @IsString()
@@ -21,20 +21,20 @@ export class DepartmentResponse {
 
     @ApiProperty()
     @IsString()
-    telefon: string;
+    telefon_raqam: string;
 
     @ApiProperty()
     @IsString()
-    bulimBoshligi: string;
+    bolim_boshligi: string;
 
     static fromModel(model: Department): DepartmentResponse {
         const departmentResponse = new DepartmentResponse();
         departmentResponse.id = model.id,
-            departmentResponse.bulimNomi = model.bulimNomi,
+            departmentResponse.bolim_nomi = model.bolim_nomi,
             departmentResponse.hudud = model.hudud,
             departmentResponse.muassasa = model.muassasa,
-            departmentResponse.telefon = model.telefon
-        departmentResponse.bulimBoshligi = model.bulimBoshligi
+            departmentResponse.telefon_raqam = model.telefon_raqam
+        departmentResponse.bolim_boshligi = model.bolim_boshligi
         return departmentResponse;
     }
 }

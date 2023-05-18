@@ -1,10 +1,13 @@
-import { Model, Table, Column, HasMany } from "sequelize-typescript";
-import { Doctor } from "../../doctor/models";
+import { Model, Table, Column, HasMany } from 'sequelize-typescript';
+import { Labaratory } from '../../labaratory/model/labaratory.model';
 
 @Table
-export class Department extends Model {
+export class Department extends Model<Department> {
+    @Column({ primaryKey: true, autoIncrement: true })
+    id: number;
+
     @Column
-    bulimNomi: string;
+    bolim_nomi: string;
 
     @Column
     hudud: string;
@@ -13,11 +16,14 @@ export class Department extends Model {
     muassasa: string;
 
     @Column
-    telefon: string;
+    telefon_raqam: string;
 
     @Column
-    bulimBoshligi: string;
+    bolim_boshligi: string;
 
-    @HasMany(() => Doctor)
-    doctors: Doctor[];
+    @Column
+    shifokorlar_soni: number;
+
+    @HasMany(() => Labaratory)
+    labaratories: Labaratory[];
 }

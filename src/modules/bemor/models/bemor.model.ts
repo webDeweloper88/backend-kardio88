@@ -1,11 +1,10 @@
-import { Model, Table, Column, PrimaryKey } from "sequelize-typescript";
+import { Model, Table, Column, HasMany } from 'sequelize-typescript';
+import { Labaratory } from '../../labaratory/model/labaratory.model';
 
 @Table
 export class Bemors extends Model<Bemors> {
-
-    //@PrimaryKey
-    //@Column
-    //id!: number;
+    @Column({ primaryKey: true, autoIncrement: true })
+    id: number;
 
     @Column
     fio: string;
@@ -17,7 +16,7 @@ export class Bemors extends Model<Bemors> {
     tugilgan_sana: string;
 
     @Column
-    buyi: string;
+    boyi: string;
 
     @Column
     vazni: string;
@@ -45,4 +44,7 @@ export class Bemors extends Model<Bemors> {
 
     @Column
     qanday_transportda: string;
+
+    @HasMany(() => Labaratory)
+    labaratories: Labaratory[];
 }

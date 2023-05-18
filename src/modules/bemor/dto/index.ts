@@ -23,7 +23,7 @@ export class CreateBemorDto {
     @ApiProperty()
     @IsNotEmpty()
     @IsString()
-    buyi: string;
+    boyi: string;
 
     @ApiProperty()
     @IsNotEmpty()
