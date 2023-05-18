@@ -8,19 +8,21 @@ import { ApiResponse, ApiTags } from '@nestjs/swagger';
 export class DepartmentController {
     constructor(private readonly departmentService: DepartmentService) { }
 
-    @ApiTags('API')
+    @ApiTags('Departments')
     @ApiResponse({ status: 201, type: CreateDepartmentDto })
     @Post('create')
     async create(@Body() dto: CreateDepartmentDto): Promise<CreateDepartmentDto> {
         return await this.departmentService.create(dto);
     }
 
+    @ApiTags('Departments')
+    @ApiResponse({ status: 201, type: Department })
     @Get(':id')
     async findOne(@Param('id') id: string): Promise<Department> {
         return await this.departmentService.findOne(id);
     }
 
-    @ApiTags('API')
+    @ApiTags('Departments')
     @ApiResponse({ status: 201, type: Department })
     @Get('')
     async findAll(): Promise<Department[]> {
@@ -28,13 +30,13 @@ export class DepartmentController {
     }
 
 
-    @ApiTags('API')
+    @ApiTags('Departments')
     @ApiResponse({ status: 201, type: CreateDepartmentDto })
     @Put(':id')
     async update(@Param('id') id: string, @Body() updateDepartmentDto: CreateDepartmentDto): Promise<Department> {
         return await this.departmentService.update(id, updateDepartmentDto);
     }
-    @ApiTags('API')
+    @ApiTags('Departments')
     @ApiResponse({ status: 201, })
     @Delete(':id')
     async delete(@Param('id') id: string): Promise<void> {

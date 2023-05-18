@@ -9,33 +9,36 @@ import { Labaratory } from './model/labaratory.model';
 export class LabaratoryController {
 	constructor(private readonly labaratoryService: LabaratoryService) { }
 
-	@ApiTags('API')
+	@ApiTags('Labaratory')
 	@ApiResponse({ status: 201, type: CreateLabaratoryDto })
 	@Post('create')
 	async create(@Body() dto: CreateLabaratoryDto): Promise<CreateLabaratoryDto> {
 		return await this.labaratoryService.create(dto);
 	}
 
-	@ApiTags('API')
+	@ApiTags('Labaratory')
 	@ApiResponse({ status: 201, type: Labaratory })
-	@Get('')
+	@Get('all')
 	async findAll(): Promise<Labaratory[]> {
 		return await this.labaratoryService.findAll();
 	}
 
-
+	@ApiTags('Labaratory')
+	@ApiResponse({ status: 201, type: Labaratory })
 	@Get(':id')
 	async findOne(@Param('id') id: number): Promise<Labaratory> {
 		return await this.labaratoryService.findOne(id);
 	}
 
-	@ApiTags('API')
+	@ApiTags('Labaratory')
 	@ApiResponse({ status: 201, type: CreateLabaratoryDto })
 	@Put(':id')
 	async update(@Param('id') id: number, @Body() UpdateLabaratoryDto: UpdateLabaratoryDto): Promise<Labaratory> {
 		return await this.labaratoryService.update(id, UpdateLabaratoryDto);
 	}
 
+	@ApiTags('Labaratory')
+	@ApiResponse({ status: 201, type: CreateLabaratoryDto })
 	@Delete(':id')
 	async remove(@Param('id') id: number): Promise<void> {
 		await this.labaratoryService.remove(+id);

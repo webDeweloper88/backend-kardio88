@@ -8,35 +8,35 @@ import { Doctor } from './models';
 export class DoctorController {
     constructor(private readonly doctorService: DoctorService) { }
 
-    @ApiTags('API')
+    @ApiTags('Doctor')
     @ApiResponse({ status: 201, type: CreateDoctorDto })
     @Post('create_doctor')
     async register(@Body() createDoctorDto: CreateDoctorDto) {
         return this.doctorService.create(createDoctorDto);
     }
 
-    @ApiTags('API')
+    @ApiTags('Doctor')
     @ApiResponse({ status: 201, type: Doctor })
     @Get()
     async findAll() {
         return this.doctorService.findAll();
     }
 
-    @ApiTags('API')
+    @ApiTags('Doctor')
     @ApiResponse({ status: 201, type: Doctor })
     @Get(':id')
     async findOne(@Param('id') id: string) {
         return this.doctorService.findOne(+id);
     }
 
-    @ApiTags('API')
+    @ApiTags('Doctor')
     @ApiResponse({ status: 201, type: Doctor })
     @Put(':id')
     async update(@Param('id') id: string, @Body() updateDoctorDto: UpdateDoctorDto) {
         return this.doctorService.update(+id, updateDoctorDto);
     }
 
-    @ApiTags('API')
+    @ApiTags('Doctor')
     @ApiResponse({ status: 201, })
     @Delete(':id')
     async remove(@Param('id') id: string) {

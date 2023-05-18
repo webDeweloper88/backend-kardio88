@@ -30,6 +30,10 @@ export class BemorResponse {
 
     @ApiProperty()
     @IsString()
+    qon_guruxi: string;
+
+    @ApiProperty()
+    @IsString()
     manzili: string;
 
     @ApiProperty()

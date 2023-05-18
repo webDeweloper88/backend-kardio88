@@ -1,5 +1,6 @@
 import { Model, Table, Column, HasMany } from 'sequelize-typescript';
 import { Labaratory } from '../../labaratory/model/labaratory.model';
+import { Glyukoza } from 'src/modules/glyukoza/models/model.glyukoza';
 
 @Table
 export class Department extends Model<Department> {
@@ -26,4 +27,7 @@ export class Department extends Model<Department> {
 
     @HasMany(() => Labaratory)
     labaratories: Labaratory[];
+
+    @HasMany(() => Glyukoza)
+    glyukoza: Glyukoza[];
 }
