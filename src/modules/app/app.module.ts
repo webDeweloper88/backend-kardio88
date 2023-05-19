@@ -22,6 +22,11 @@ import { Glyukoza } from '../glyukoza/models/model.glyukoza';
 import { GlyukozaModule } from '../glyukoza/glyukoza.module';
 import { Bioximik } from '../bioximik/model/model.bioximik';
 import { BioximikModule } from '../bioximik/bioximik.module';
+import { Analiz } from '../analiz/model/model.analiz';
+import { AnalizModule } from '../analiz/analiz.module';
+import { Qon } from '../qon/model/model.qon';
+import { QonModule } from '../qon/qon.module';
+import { Indeks } from '../indeks/model/model.indeks';
 
 
 
@@ -44,7 +49,7 @@ import { BioximikModule } from '../bioximik/bioximik.module';
       database: configService.get('db_name'),
       synchronize: true,
       autoLoadModels: true,
-      models: [User, Watchlist, Bemors, Doctor, Department, Labaratory, Glyukoza, Bioximik]
+      models: [User, Watchlist, Bemors, Doctor, Department, Labaratory, Glyukoza, Bioximik, Analiz, Qon, Indeks]
 
     })
 
@@ -59,6 +64,9 @@ import { BioximikModule } from '../bioximik/bioximik.module';
     LabaratoryModule,
     GlyukozaModule,
     BioximikModule,
+    AnalizModule,
+    QonModule,
+    Indeks,
 
   ],
   controllers: [AppController],
