@@ -11,4 +11,4 @@ import { Department } from '../department/models';
   controllers: [IndeksController],
   providers: [IndeksService]
 })
-export class IndeksModule {}
+export class IndeksModule { }

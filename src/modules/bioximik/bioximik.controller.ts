@@ -1,10 +1,10 @@
 import { Body, Controller, Delete, Get, Injectable, Param, Post, Put } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
-import { CreateBioximikDto, UpdateBioximikDto,  } from './dto';
+import { CreateBioximikDto, UpdateBioximikDto, } from './dto';
 import { Bemors } from '../bemor/models/bemor.model';
 import { Department } from '../department/models';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Bioximik } from './model/model.bioximik';
+import { Bioximik } from './model/bioximik.model';
 
 @Controller('bioximik')
 export class BioximikController {

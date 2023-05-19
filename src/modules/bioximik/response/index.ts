@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsNumber, IsString } from 'class-validator';
-import { Bioximik } from '../model/model.bioximik';
+import { Bioximik } from '../model/bioximik.model';
 
 export class ResponseBioximikDto {
   @ApiProperty()
@@ -106,14 +106,14 @@ export class ResponseBioximikDto {
     responseDto.alaninaminotransferaza = bioximik.alaninaminotransferaza;
     responseDto.aspartataminotransferza = bioximik.aspartataminotransferza;
     responseDto.gammagglutamilransferza = bioximik.gammagglutamilransferza;
-    responseDto.laktatdegidrogenaza= bioximik.laktatdegidrogenaza;
-    responseDto.a_amilaza=bioximik.ishqoriy_fostataza;
+    responseDto.laktatdegidrogenaza = bioximik.laktatdegidrogenaza;
+    responseDto.a_amilaza = bioximik.ishqoriy_fostataza;
     responseDto.tmol = bioximik.tmol;
-    responseDto.kaliy =bioximik.kaliy;
+    responseDto.kaliy = bioximik.kaliy;
     responseDto.kaltsiy = bioximik.kaltsiy;
     responseDto.temir = bioximik.temir;
     responseDto.fosfor = bioximik.fosfor;
     responseDto.xlor = bioximik.xlor;
     return responseDto
   }
-  }
+}

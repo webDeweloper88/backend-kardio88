@@ -11,15 +11,16 @@ export class Labaratory extends Model<Labaratory> {
 	@Column
 	bemorId: number;
 
-	@BelongsTo(() => Bemors)
-	bemors: Bemors;
+	@BelongsTo(() => Bemors, { foreignKey: 'bemorId', targetKey: 'id' })
+	bemor: Bemors;
 
 	@ForeignKey(() => Department)
 	@Column
 	departmentId: number;
 
-	@BelongsTo(() => Department)
+	@BelongsTo(() => Department, { foreignKey: 'departmentId', targetKey: 'id' })
 	department: Department;
+
 
 	@Column
 	kasallik: string;

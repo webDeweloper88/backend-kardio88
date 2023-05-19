@@ -20,13 +20,15 @@ import { Labaratory } from '../labaratory/model/labaratory.model';
 import { LabaratoryModule } from '../labaratory/labaratory.module';
 import { Glyukoza } from '../glyukoza/models/model.glyukoza';
 import { GlyukozaModule } from '../glyukoza/glyukoza.module';
-import { Bioximik } from '../bioximik/model/model.bioximik';
+import { Bioximik } from '../bioximik/model/bioximik.model';
 import { BioximikModule } from '../bioximik/bioximik.module';
 import { Analiz } from '../analiz/model/model.analiz';
 import { AnalizModule } from '../analiz/analiz.module';
 import { Qon } from '../qon/model/model.qon';
 import { QonModule } from '../qon/qon.module';
 import { Indeks } from '../indeks/model/model.indeks';
+import { IndeksModule } from '../indeks/indeks.module';
+
 
 
 
@@ -66,7 +68,8 @@ import { Indeks } from '../indeks/model/model.indeks';
     BioximikModule,
     AnalizModule,
     QonModule,
-    Indeks,
+    IndeksModule
+
 
   ],
   controllers: [AppController],

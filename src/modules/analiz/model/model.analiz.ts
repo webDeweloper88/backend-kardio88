@@ -11,15 +11,16 @@ export class Analiz extends Model<Analiz> {
   @Column
   bemorId: number;
 
-  @BelongsTo(() => Bemors)
-	bemor: Bemors;
+  @BelongsTo(() => Bemors, { foreignKey: 'bemorId', targetKey: 'id' })
+  bemor: Bemors;
 
   @ForeignKey(() => Department)
   @Column
   departmentId: number;
 
-  @BelongsTo(() => Department)
-	department: Department;
+  @BelongsTo(() => Department, { foreignKey: 'departmentId', targetKey: 'id' })
+  department: Department;
+
 
   @Column
   sana: string;

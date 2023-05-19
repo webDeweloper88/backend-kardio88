@@ -1,328 +1,350 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsOptional, IsString } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsOptional, IsString } from 'class-validator';
 
 export class CreateIndeksDto {
-  @ApiProperty()  
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsNumber()
+  bemorId: number;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsNumber()
+  departmentId: number;
+
+  @ApiProperty()
   @IsString()
   rieatm: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   sana: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   t_c: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   shikoyat: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   anamnezis: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   anamnezis_vitae: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   epid: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   status: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   nafas_olish: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   yurak_qon_tomir: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   ovqat_hazm_qilish: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   siydik_chiqarish_tizimi: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   gipotalamo: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   buyi: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   ogirligi: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   imt: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   imt2: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   qalqonsimon_bez: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   qalqonsimon_bezoldi_bez: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   buyrak_usti: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   oshqozon_osti: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   jinsiy_tizim: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   dastlabki_tashxiz: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   asosiy_kasallik: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   hamrox: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   umumiy_qon_taxlili: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   umumiy_siydik_taxlili: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   qondaqand_taxlili: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   bioximik_taxlil: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   rw: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   rengenttekshiruv: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   ekg_tekshiruv: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   parxez: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   davolovchi: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   bolim_mudiri: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   direktor_urinbosari: string;
 }
 export class UpdaeteIndeksDto {
-  @ApiProperty() 
-  @IsOptional() 
+
+  @ApiProperty()
+  @IsOptional()
+  @IsNumber()
+  bemorId: number;
+
+  @ApiProperty()
+  @IsOptional()
+  @IsNumber()
+  departmentId: number;
+
+  @ApiProperty()
+  @IsOptional()
   @IsString()
   rieatm?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   sana?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   t_c?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   shikoyat?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   anamnezis?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   anamnezis_vitae?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   epid?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   status?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   nafas_olish: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   yurak_qon_tomir?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   ovqat_hazm_qilish?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   siydik_chiqarish_tizimi?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   gipotalamo?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   buyi?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   ogirligi?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   imt?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   imt2?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   qalqonsimon_bez?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   qalqonsimon_bezoldi_bez?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   buyrak_usti?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   oshqozon_osti?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   jinsiy_tizim?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   dastlabki_tashxiz?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   asosiy_kasallik?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   hamrox?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   umumiy_qon_taxlili?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   umumiy_siydik_taxlili?: string;
 
   @IsString()
-  @ApiProperty()  
+  @ApiProperty()
   qondaqand_taxlili?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   bioximik_taxlil?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   rw?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   rengenttekshiruv?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   ekg_tekshiruv?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   parxez?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   davolovchi?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   bolim_mudiri?: string;
 
   @IsString()
-    @IsOptional() 
-  @ApiProperty()  
+  @IsOptional()
+  @ApiProperty()
   direktor_urinbosari?: string;
 }

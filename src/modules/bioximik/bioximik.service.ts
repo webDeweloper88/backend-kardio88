@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/sequelize';
 import { Bemors } from '../bemor/models/bemor.model';
 import { Department } from '../department/models';
-import { Bioximik } from './model/model.bioximik';
+import { Bioximik } from './model/bioximik.model';
 import { UpdateBioximikDto, CreateBioximikDto } from './dto';
 
 
@@ -20,17 +20,17 @@ export class BioximikService {
 		newBioximik.mochevina = dto.mochevina;
 		newBioximik.kreatin = dto.kreatin;
 		newBioximik.alaninaminotransferaza = dto.alaninaminotransferaza;
-        newBioximik.aspartataminotransferza = dto.aspartataminotransferza;
-        newBioximik.gammagglutamilransferza= dto.gammagglutamilransferza;
-        newBioximik.laktatdegidrogenaza = dto.laktatdegidrogenaza;
-        newBioximik.a_amilaza = dto.a_amilaza;
-        newBioximik.ishqoriy_fostataza = dto.ishqoriy_fostataza;
-        newBioximik.tmol=dto.tmol;
-        newBioximik.kaliy=dto.kaliy;
-        newBioximik.kaltsiy=dto.kaltsiy;
-        newBioximik.temir =dto.temir;
-        newBioximik.fosfor = dto.fosfor;
-        newBioximik.xlor =dto.xlor;
+		newBioximik.aspartataminotransferza = dto.aspartataminotransferza;
+		newBioximik.gammagglutamilransferza = dto.gammagglutamilransferza;
+		newBioximik.laktatdegidrogenaza = dto.laktatdegidrogenaza;
+		newBioximik.a_amilaza = dto.a_amilaza;
+		newBioximik.ishqoriy_fostataza = dto.ishqoriy_fostataza;
+		newBioximik.tmol = dto.tmol;
+		newBioximik.kaliy = dto.kaliy;
+		newBioximik.kaltsiy = dto.kaltsiy;
+		newBioximik.temir = dto.temir;
+		newBioximik.fosfor = dto.fosfor;
+		newBioximik.xlor = dto.xlor;
 		return newBioximik.save();
 	}
 

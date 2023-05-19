@@ -1,8 +1,10 @@
 import { Model, Table, Column, HasMany } from 'sequelize-typescript';
 import { Labaratory } from '../../labaratory/model/labaratory.model';
-import { Glyukoza } from 'src/modules/glyukoza/models/model.glyukoza';
-import { Bioximik } from 'src/modules/bioximik/model/model.bioximik';
-import { Analiz } from 'src/modules/analiz/model/model.analiz';
+import { Glyukoza } from '../../glyukoza/models/model.glyukoza';
+import { Bioximik } from '../../bioximik/model/bioximik.model';
+import { Analiz } from '../../analiz/model/model.analiz';
+import { Indeks } from '../../indeks/model/model.indeks';
+import { Qon } from '../../qon/model/model.qon';
 
 @Table
 export class Department extends Model<Department> {
@@ -32,12 +34,19 @@ export class Department extends Model<Department> {
 
     @HasMany(() => Glyukoza)
     glyukoza: Glyukoza[];
-    
+
     @HasMany(() => Bioximik)
     bioximik: Bioximik[];
 
     @HasMany(() => Analiz)
     analiz: Analiz[];
 
-    
+
+    @HasMany(() => Qon)
+    qon: Qon[];
+
+    @HasMany(() => Indeks)
+    indeks: Indeks[];
+
+
 }

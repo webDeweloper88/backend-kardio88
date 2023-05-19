@@ -11,15 +11,16 @@ export class Qon extends Model<Qon> {
   @Column
   bemorId: number;
 
-  @BelongsTo(() => Bemors)
+  @BelongsTo(() => Bemors, { foreignKey: 'bemorId', targetKey: 'id' })
   bemor: Bemors;
 
   @ForeignKey(() => Department)
   @Column
   departmentId: number;
 
-  @BelongsTo(() => Department)
+  @BelongsTo(() => Department, { foreignKey: 'departmentId', targetKey: 'id' })
   department: Department;
+
 
   @Column
   gemoglablin: string;
