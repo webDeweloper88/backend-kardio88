@@ -12,14 +12,14 @@ export class Indeks extends Model<Indeks> {
   bemorId: number;
 
   @BelongsTo(() => Bemors)
-	bemor: Bemors;
+  bemor: Bemors;
 
   @ForeignKey(() => Department)
   @Column
   departmentId: number;
 
   @BelongsTo(() => Department)
-	department: Department;
+  department: Department;
 
   @Column
   rieatm: string;

@@ -12,7 +12,7 @@ export class GlyukozaContoller {
 
 	@ApiTags('Glyukoza')
 	@ApiResponse({ status: 201, type: CreateGlyukozaDto })
-	@Post('create_glyukoza')
+	@Post('create')
 	async create(@Body() dto: CreateGlyukozaDto): Promise<CreateGlyukozaDto> {
 		return await this.glyukozamodel.create(dto);
 	}

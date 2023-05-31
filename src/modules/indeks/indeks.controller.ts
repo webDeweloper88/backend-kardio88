@@ -7,7 +7,7 @@ import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { IndeksService } from './indeks.service';
 import { Indeks } from './model/model.indeks';
 
-@Controller('Indeks')
+@Controller('indeks')
 export class IndeksController {
 	constructor(private readonly indeksService: IndeksService) { }
 
